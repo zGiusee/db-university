@@ -67,7 +67,7 @@ laurea (286) {
 
     SELECT COUNT (*) AS `insegnanti_senza_numero_di_telefono`
     FROM `teachers`
-    WHERE `phone` IS NOT NULL;
+    WHERE `phone` IS NULL;
 
 }
 
