@@ -65,5 +65,19 @@ dipartimento, in ordine alfabetico per cognome e nome{
 7. (BONUS) Selezionare per ogni studente il numero di tentativi sostenuti per ogni esame,
 stampando anche il voto massimo. Succesivamente, filtrare i tentativi con voto minimo 18{
 
+    SELECT
+        `students`.`name` AS `student_name`,
+        `students`.`surname` AS `student_surname`,
+        `exams`.`date` AS `exam_date`,
+        MAX(`exam_student`.`vote`) AS `voto_massimo`,
+        MIN(`exam_student`.`vote`) AS `voto_minimo`
+    FROM
+        `students`
+    JOIN `exam_student` ON `students`.`id` = `exam_student`.`student_id`
+    JOIN `exams` ON `exam_student`.`exam_id` = `exams`.`id`
+    WHERE `exam_student`.`vote` >= 18
+    GROUP BY `exam_student`.`exam_id`;
+
+
 }
 
