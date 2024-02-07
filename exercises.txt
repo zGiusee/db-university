@@ -77,10 +77,10 @@ Selezionare nome, descrizione e periodo di tutti i corsi che hanno sito web dive
     SELECT `name`, `description`,`period`
     FROM `courses`
     WHERE `website` IS NOT NULL
-    AND `cfu` BETWEEN '9' AND '12'
+    AND `cfu` BETWEEN 9 AND 12
     AND `year` = 1
     ORDER BY `cfu` DESC;
 
-    (24 RISULTATI)
+    (85 RISULTATI)
 
 }
